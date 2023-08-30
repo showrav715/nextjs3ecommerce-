@@ -1,0 +1,23 @@
+@import '../../assets/css/material-design-iconic-font.min.css';
+@import '../../assets/css/font-awesome.min.css';
+@import '../../assets/css/fontawesome-stars.css';
+@import '../../assets/css/nice-select.css';
+@import '../../assets/css/bootstrap.min.css';
+@import '../../assets/css/meanmenu.css';
+@import '../../assets/css/helper.css';
+@import '../../assets/style.css';
+@import '../../assets/css/responsive.css';
+
+
+.category-menu-list {
+    display: none;
+}
+
+.show-categories {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+    -webkit-animation: fadeIn 0.5s ease-in-out;
+    -moz-animation: fadeIn 0.5s ease-in-out;
+    -o-animation: fadeIn 0.5s ease-in-out;
+    -ms-animation: fadeIn 0.5s ease-in-out;
+}
