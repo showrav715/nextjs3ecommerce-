@@ -18,7 +18,6 @@
 			1.8 Background Variation Set
 			1.9 Animation
 			1.10 All Navigation & Pagination
-			1.11 Owl Carousel Box Shadow
 			1.12 Li's Mobile Menu Customization 
 			1.13 Modal Area
 			1.14 Scroll Up
@@ -537,72 +536,7 @@ textarea:focus {
 /*  1.9 Animation
 /*----------------------------------------*/
 /* Slider Progress Bar */
-.slider-active .owl-item.active .slider-progress {
-	-webkit-animation: 5000ms ease-in-out 0s normal none 1 running timebar;
-	animation: 10000ms ease-in-out 0s normal none 1 running timebar;
-	background: rgba(0, 0, 0, .3);
-	height: 5px;
-	left: 0;
-	opacity: 0.8;
-	position: absolute;
-	top: 0;
-	z-index: 4;
-}
-/* animation-style-01 */
-.owl-item.active .animation-style-01 .slider-content h5,
-.owl-item.active .animation-style-01 .slider-content-2 h5 {
-    -webkit-animation: 800ms ease-in-out 0s normal none 1 running zoomInRight;
-    animation: 800ms ease-in-out 0s normal none 1 running zoomInRight;
-}
 
-.owl-item.active .animation-style-01 .slider-content h2 {
-    -webkit-animation: 1200ms ease-in-out 0s normal none 1 running zoomInRight;
-    animation: 1200ms ease-in-out 0s normal none 1 running zoomInRight;
-}
-
-.owl-item.active .animation-style-01 .slider-content h3,
-.owl-item.active .animation-style-01 .slider-content-2 h3 {
-    -webkit-animation: 1600ms ease-in-out 0s normal none 1 running zoomInRight;
-    animation: 1600ms ease-in-out 0s normal none 1 running zoomInRight;
-}
-
-.owl-item.active .animation-style-01 .slider-content .slide-btn,
-.owl-item.active .animation-style-01 .slider-content-2 .slide-btn {
-    -webkit-animation: 2000ms ease-in-out 0s normal none 1 running zoomInRight;
-    animation: 2000ms ease-in-out 0s normal none 1 running zoomInRight;
-}
-.owl-item.active .animation-style-01 .slider-content-2 .img-slide {
-    -webkit-animation: 1000ms ease-in-out 0s normal none 1 running slideInUp;
-    animation: 1000ms ease-in-out 0s normal none 1 running slideInUp;
-}
-.owl-item.active .animation-style-02 .slider-content-2 .img-slide {
-    -webkit-animation: 1000ms ease-in-out 0s normal none 1 running slideInUp;
-    animation: 1000ms ease-in-out 0s normal none 1 running slideInUp;
-}
-
-/* animation-style-02 */
-.owl-item.active .animation-style-02 .slider-content h5,
-.owl-item.active .animation-style-02 .slider-content-2 h5 {
-    -webkit-animation: 800ms ease-in-out 0s normal none 1 running zoomInUp;
-    animation: 800ms ease-in-out 0s normal none 1 running zoomInUp;
-}
-
-.owl-item.active .animation-style-02 .slider-content h2 {
-    -webkit-animation: 1200ms ease-in-out 0s normal none 1 running zoomInUp;
-    animation: 1200ms ease-in-out 0s normal none 1 running zoomInUp;
-}
-
-.owl-item.active .animation-style-02 .slider-content h3,
-.owl-item.active .animation-style-02 .slider-content-2 h3 {
-    -webkit-animation: 1600ms ease-in-out 0s normal none 1 running zoomInUp;
-    animation: 1600ms ease-in-out 0s normal none 1 running zoomInUp;
-}
-
-.owl-item.active .animation-style-02 .slider-content .slide-btn,
-.owl-item.active .animation-style-02 .slider-content-2 .slide-btn {
-    -webkit-animation: 2000ms ease-in-out 0s normal none 1 running zoomInUp;
-    animation: 2000ms ease-in-out 0s normal none 1 running zoomInUp;
-}
 @-webkit-keyframes timebar {
 	0% {
 		width: 0;
@@ -655,115 +589,7 @@ textarea:focus {
 /*----------------------------------------*/
 /*  1.10 All Navigation & Pagination
 /*----------------------------------------*/
-.slider-active .owl-nav div, 
-.product-active .owl-nav div, 
-.special-product-active .owl-nav div {
-	color: rgba(36,36,36,.15);
-	display: block;
-	left: 0;
-	opacity: 0;
-	position: absolute;
-	text-align: center;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
-	-webkit-transition: all 0.5s ease-in-out 0s;
-	transition: all 0.5s ease-in-out 0s;
-	z-index: 8;
-}
-.slider-active .owl-nav div:hover, 
-.product-active .owl-nav div:hover {
-	color: #fed700;
-}
-.slider-active:hover .owl-nav div, .product-active:hover .owl-nav div {
-	opacity: 1;
-}
-.slider-active:hover .owl-nav div.owl-prev {
-	left: 10px;
-}
-.slider-active:hover .owl-nav div.owl-next, .product-active:hover .owl-nav div.owl-next {
-	right: 10px;
-}
-.slider-active .owl-nav div.owl-next, .product-active .owl-nav div.owl-next {
-	right: 0;
-	left: auto;
-}
-.slider-active .owl-nav > .owl-prev > i,
-.product-active .owl-nav > .owl-prev > i, 
-.slider-active .owl-nav > .owl-next > i,
-.product-active .owl-nav > .owl-next > i {
-	font-size: 55px;
-	font-weight: 700;
-}
-/*Product Active Nav Direction*/
-.product-active .owl-nav div.owl-prev {
-	left: -20px;
-}
-.product-active:hover .owl-nav div.owl-prev {
-	top: 55%;
-}
-.product-active .owl-nav div.owl-next {
-	right: -20px;
-}
-.product-active:hover .owl-nav div.owl-next {
-	top: 55%;
-	right: -20px;
-}
-@media only screen and (max-width: 1199px) {
-	/*Product Nav Arrow*/
-	.product-active .owl-nav {
-		display: none;
-	}
-}
-/* Default Pagination */
-.owl-dots {
-	bottom: 15px;
-	margin-top: 0;
-	position: absolute;
-	text-align: center;
-	width: 100%;
-	z-index: 12;
-}
-.slider-active .owl-dots {
-	display: none;
-}
-.owl-dots .owl-dot {
-	background: #fff none repeat scroll 0 0;
-	border-radius: 10px;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 0;
-	height: 10px;
-	margin: 0 4px;
-	position: relative;
-	text-align: center;
-	-webkit-transition: all 300ms ease-in 0s;
-	transition: all 300ms ease-in 0s;
-	width: 10px;
-	z-index: 8;
-}
-.owl-dots .owl-dot.active {
-	background: #fed700 none repeat scroll 0 0;
-	width: 32px;
-}
-.testimonials-active .owl-dots .owl-dot {
-	background: #000 none repeat scroll 0 0;
-	border-radius: 0;
-	height: 7px;
-	width: 7px;
-}
-.testimonials-active .owl-dots .owl-dot.active, .testimonials-active-2 .owl-dots .owl-dot.active {
-	background: #fff none repeat scroll 0 0;
-}
-.testimonials-active-2 .owl-dots .owl-dot.active {
-	background: #ebebeb;
-}
-.slider-area-2 .owl-dots {
-	display: none;
-}
-/*----------------------------------------*/
-/*  1.11 Owl Carousel Box Shadow
-/*----------------------------------------*/
+
 /*Product Active Box Shadow*/
 .product-active {
 	padding: 0 10px;
@@ -772,21 +598,15 @@ textarea:focus {
 .product-active:hover {
 	overflow: visible;
 }
-.product-area .owl-carousel .owl-item {
-	padding: 25px 0;
-}
-.product-area .owl-carousel .owl-stage-outer {
-	margin: 0 0 -100px;
-	padding: 0 0 85px;
-	position: relative;
-}
+
 /*Special Product Active Box Shadow*/
 .special-product-active {
 	padding: 0;
 	overflow: hidden;
 }
 .special-product-active:hover {
-	overflow: visible;
+	overflow-y: visible;
+
 }
 .special-product-active .single-product-wrap::before {
 	left: 0;
@@ -2151,7 +1971,7 @@ textarea:focus {
   transition: all 300ms ease-in 0s;
 }
 .single-product-wrap:hover {
-  margin: 0 0 -75px;
+  margin: 0 5px -75px;
   padding: 0 0 75px;
   z-index: 9;
 }
@@ -2424,42 +2244,7 @@ textarea:focus {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   visibility: visible;
 }
-.product-active .owl-nav button,.product-active-2 .owl-nav button {
-  background: #dddddd none repeat scroll 0 0 !important;
-  border-radius: 50%;
-  font-size: 20px !important;
-  height: 50px;
-  line-height: 50px !important;
-  margin: auto 0;
-  position: absolute;
-  right: auto;
-  text-align: center;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 50px;
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  visibility: hidden;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-.product-active .owl-nav button:hover,.product-active-2 .owl-nav button:hover {
-  background: #fed700 !important;
-  color: #fff;
-}
-.product-active .owl-nav .owl-prev,.product-active-2 .owl-nav .owl-prev {
-  left: 0;
-}
-.product-active .owl-nav .owl-next,.product-active-2 .owl-nav .owl-next {
-  right: 0;
-}
-.product-active:hover .owl-nav button, .product-active-2:hover .owl-nav button{
-  visibility: visible;
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
+
 .section-title-2 {
   margin-bottom: 25px;
   position: relative;
@@ -2517,31 +2302,7 @@ textarea:focus {
 .product-tabs-list-2 .nav li a.active {
   color: #222;
 }
-.product-active-3 .owl-nav button,.pos-product-active .owl-nav button,.latest-blog-active .owl-nav button{
-  font-size: 22px !important;
-  position: absolute;
-  right: 15px;
-  top: -55px;
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-}
-.product-active-3 .owl-nav button.owl-prev,.pos-product-active .owl-nav button.owl-prev,.latest-blog-active .owl-nav button.owl-prev {
-  right: 35px;
-}
-.product-active-3 .owl-nav button:hover,.pos-product-active .owl-nav button,.latest-blog-active .owl-nav button:hover {
-  color: #fed700;
-  -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1);
-}
-.product-active-3 .owl-nav button.owl-next,.pos-product-active .owl-nav button.owl-next,.latest-blog-active .owl-nav button.owl-next{
-  background: #ffffff none repeat scroll 0 0;
-  padding: 0 0 0 10px !important;
-}
-.product-active-3 .owl-nav button.owl-prev,.pos-product-active .owl-nav button.owl-prev,.latest-blog-active .owl-nav button.owl-prev{
-  background: #ffffff none repeat scroll 0 0;
-  padding: 0 0 0 15px !important;
-}
+
 /*----------------------------------------*/
 /*  2.5 Li's Banner
 /*----------------------------------------*/
@@ -3261,9 +3022,7 @@ li.right-menu .cat-mega-menu-2 > li {
 	text-transform: capitalize;
 	transition: all 0.3s ease-in-out;
 }
-.featured-product-active .owl-item {
-	padding: 15px;
-}
+
 .featured-pro-wrapper {
 	display: inline-block;
 	width: 100%;

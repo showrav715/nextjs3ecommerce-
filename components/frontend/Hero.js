@@ -7,6 +7,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import banner1 from '../../assets/images/banner/1_1.jpg'
 import banner2 from '../../assets/images/banner/1_2.jpg'
 import banner3 from '../../assets/images/banner/1_3.jpg'
+
 import Image from 'next/image'
 
 
