@@ -15,17 +15,17 @@ const images = [image1, image2, image3, image4, image5, image6];
 
 function FeatureProduct() {
   return (
-    <section class="product-area li-laptop-product li-laptop-product-2 pb-45 ">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="li-section-title">
+    <section className="product-area li-laptop-product li-laptop-product-2 pb-45 ">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="li-section-title">
               <h2>
                 <span>Featured Products</span>
               </h2>
             </div>
 
-            <div class="row">
+            <div className="row">
               <Swiper
                 slidesPerView={4}
                 spaceBetween={10}
@@ -57,9 +57,9 @@ function FeatureProduct() {
                 className="special-product-active mt-40"
               >
                 {/* hot deal slider product */}
-                {images.map((img) => {
+                {images.map((img,index) => {
                   return (
-                    <SwiperSlide key={img}>
+                    <SwiperSlide key={index}>
                       <Product image={img} />
                     </SwiperSlide>
                   );

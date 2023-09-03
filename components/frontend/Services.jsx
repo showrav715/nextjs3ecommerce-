@@ -10,18 +10,18 @@ const images = [image1, image2, image3, image4];
 
 function Services() {
   return (
-    <div class="footer-static-top">
-      <div class="container">
-        <div class="footer-shipping pt-60 pb-55 pb-xs-25">
-          <div class="row">
+    <div className="footer-static-top">
+      <div className="container">
+        <div className="footer-shipping pt-60 pb-55 pb-xs-25">
+          <div className="row">
             {images.map((image, index) => {
               return (
                 <div
                   key={index}
-                  class="col-lg-3 col-md-6 col-sm-6 pb-sm-55 pb-xs-55"
+                  className="col-lg-3 col-md-6 col-sm-6 pb-sm-55 pb-xs-55"
                 >
-                  <div class="li-shipping-inner-box">
-                    <div class="shipping-icon">
+                  <div className="li-shipping-inner-box">
+                    <div className="shipping-icon">
                       <Image
                         src={image}
                         width={67}
@@ -29,7 +29,7 @@ function Services() {
                         alt="Shipping"
                       />
                     </div>
-                    <div class="shipping-text">
+                    <div className="shipping-text">
                       <h2>Free Delivery</h2>
                       <p>And free returns. See checkout for delivery dates.</p>
                     </div>

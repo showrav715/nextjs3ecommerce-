@@ -56,9 +56,9 @@ function HotDeal() {
               className="special-product-active mt-40"
             >
               {/* hot deal slider product */}
-              {images.map((img) => {
+              {images.map((img,index) => {
                 return (
-                  <SwiperSlide key={img}>
+                  <SwiperSlide key={index}>
                     <Product image={img} />
                   </SwiperSlide>
                 );

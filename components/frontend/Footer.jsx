@@ -8,22 +8,22 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <div class="footer">
+    <div className="footer">
       <Services />
 
-      <div class="footer-static-middle">
-        <div class="container">
-          <div class="footer-logo-wrap pt-50 pb-35">
-            <div class="row">
-              <div class="col-lg-4 col-md-6">
-                <div class="footer-logo">
+      <div className="footer-static-middle">
+        <div className="container">
+          <div className="footer-logo-wrap pt-50 pb-35">
+            <div className="row">
+              <div className="col-lg-4 col-md-6">
+                <div className="footer-logo">
                   <Image width={190} height={45} src={footerLogo} alt="Footer Logo" />
-                  <p class="info">
+                  <p className="info">
                     We are a team of designers and developers that create high
                     quality HTML Template & Woocommerce, Shopify Theme.
                   </p>
                 </div>
-                <ul class="des">
+                <ul className="des">
                   <li>
                     <span>Address: </span>
                     6688Princess Road, London, Greater London BAS 23JK, UK
@@ -41,9 +41,9 @@ function Footer() {
                 </ul>
               </div>
 
-              <div class="col-lg-2 col-md-3 col-sm-6">
-                <div class="footer-block">
-                  <h3 class="footer-block-title">Product</h3>
+              <div className="col-lg-2 col-md-3 col-sm-6">
+                <div className="footer-block">
+                  <h3 className="footer-block-title">Product</h3>
                   <ul>
                     <li>
                       <a href="#">Prices drop</a>
@@ -61,9 +61,9 @@ function Footer() {
                 </div>
               </div>
 
-              <div class="col-lg-2 col-md-3 col-sm-6">
-                <div class="footer-block">
-                  <h3 class="footer-block-title">Our company</h3>
+              <div className="col-lg-2 col-md-3 col-sm-6">
+                <div className="footer-block">
+                  <h3 className="footer-block-title">Our company</h3>
                   <ul>
                     <li>
                       <a href="#">Delivery</a>
@@ -81,96 +81,96 @@ function Footer() {
                 </div>
               </div>
 
-              <div class="col-lg-4">
-                <div class="footer-block">
-                  <h3 class="footer-block-title">Follow Us</h3>
-                  <ul class="social-link">
-                    <li class="twitter">
+              <div className="col-lg-4">
+                <div className="footer-block">
+                  <h3 className="footer-block-title">Follow Us</h3>
+                  <ul className="social-link">
+                    <li className="twitter">
                       <a
                         href="https://twitter.com/"
                         data-toggle="tooltip"
                         target="_blank"
                         title="Twitter"
                       >
-                        <i class="fa fa-twitter"></i>
+                        <i className="fa fa-twitter"></i>
                       </a>
                     </li>
-                    <li class="rss">
+                    <li className="rss">
                       <a
                         href="https://rss.com/"
                         data-toggle="tooltip"
                         target="_blank"
                         title="RSS"
                       >
-                        <i class="fa fa-rss"></i>
+                        <i className="fa fa-rss"></i>
                       </a>
                     </li>
-                    <li class="google-plus">
+                    <li className="google-plus">
                       <a
                         href="https://www.plus.google.com/discover"
                         data-toggle="tooltip"
                         target="_blank"
                         title="Google +"
                       >
-                        <i class="fa fa-google-plus"></i>
+                        <i className="fa fa-google-plus"></i>
                       </a>
                     </li>
-                    <li class="facebook">
+                    <li className="facebook">
                       <a
                         href="https://www.facebook.com/"
                         data-toggle="tooltip"
                         target="_blank"
                         title="Facebook"
                       >
-                        <i class="fa fa-facebook"></i>
+                        <i className="fa fa-facebook"></i>
                       </a>
                     </li>
-                    <li class="youtube">
+                    <li className="youtube">
                       <a
                         href="https://www.youtube.com/"
                         data-toggle="tooltip"
                         target="_blank"
                         title="Youtube"
                       >
-                        <i class="fa fa-youtube"></i>
+                        <i className="fa fa-youtube"></i>
                       </a>
                     </li>
-                    <li class="instagram">
+                    <li className="instagram">
                       <a
                         href="https://www.instagram.com/"
                         data-toggle="tooltip"
                         target="_blank"
                         title="Instagram"
                       >
-                        <i class="fa fa-instagram"></i>
+                        <i className="fa fa-instagram"></i>
                       </a>
                     </li>
                   </ul>
                 </div>
 
-                <div class="footer-newsletter">
+                <div className="footer-newsletter">
                   <h4>Sign up to newsletter</h4>
                   <form
                     action="#"
                     method="post"
                     id="mc-embedded-subscribe-form"
                     name="mc-embedded-subscribe-form"
-                    class="footer-subscribe-form validate"
+                    className="footer-subscribe-form validate"
                     target="_blank"
-                    novalidate
+                    noValidate
                   >
                     <div id="mc_embed_signup_scroll">
                       <div
                         id="mc-form"
-                        class="mc-form subscribe-form form-group"
+                        className="mc-form subscribe-form form-group"
                       >
                         <input
                           id="mc-email"
                           type="email"
-                          autocomplete="off"
+                          autoComplete="off"
                           placeholder="Enter your email"
                         />
-                        <button class="btn" id="mc-submit">
+                        <button className="btn" id="mc-submit">
                           Subscribe
                         </button>
                       </div>
@@ -183,11 +183,11 @@ function Footer() {
         </div>
       </div>
 
-      <div class="footer-static-bottom pt-55 pb-55">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="footer-links">
+      <div className="footer-static-bottom pt-55 pb-55">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="footer-links">
                 <ul>
                   <li>
                     <a href="#">Online Shopping</a>
@@ -249,13 +249,13 @@ function Footer() {
                 </ul>
               </div>
 
-              <div class="copyright text-center">
+              <div className="copyright text-center">
                 <a href="#">
                   <Image width={286} height={32} src={copyright} alt="" />
                 </a>
               </div>
 
-              <div class="copyright text-center pt-25">
+              <div className="copyright text-center pt-25">
                 <span>
                   <a target="_blank" href="https://www.templateshub.net">
                     Templates Hub
