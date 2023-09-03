@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import './globals.css';
 
 import Header from '@/components/frontend/Header';
+import Footer from '@/components/frontend/Footer';
 
 export default function RootLayout({ children }) {
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <div className='body-wrapper'>
           <Header />
           {children}
+          <Footer />
         </div>
       </body>
     </html>

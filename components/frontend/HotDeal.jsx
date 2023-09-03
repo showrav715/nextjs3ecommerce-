@@ -1,11 +1,8 @@
 "use client";
 import React from "react";
-import HotDealSlider from "./HotDealSlider";
-// Import Swiper styles
+import Product from "./Product";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import required modules
-import { Pagination } from "swiper/modules";
 
 import image1 from "../../assets/images/product/large-size/1.jpg";
 import image2 from "../../assets/images/product/large-size/2.jpg";
@@ -13,8 +10,6 @@ import image3 from "../../assets/images/product/large-size/3.jpg";
 import image4 from "../../assets/images/product/large-size/4.jpg";
 import image5 from "../../assets/images/product/large-size/5.jpg";
 import image6 from "../../assets/images/product/large-size/6.jpg";
-
-import Image from "next/image";
 
 const images = [image1, image2, image3, image4, image5, image6];
 
@@ -63,8 +58,8 @@ function HotDeal() {
               {/* hot deal slider product */}
               {images.map((img) => {
                 return (
-                  <SwiperSlide key={img} >
-                    <HotDealSlider image={img} />
+                  <SwiperSlide key={img}>
+                    <Product image={img} />
                   </SwiperSlide>
                 );
               })}
