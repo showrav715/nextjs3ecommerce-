@@ -167,7 +167,7 @@ function Footer() {
                         <input
                           id="mc-email"
                           type="email"
-                          autoComplete="off"
+                          defaultValue={""}
                           placeholder="Enter your email"
                         />
                         <button className="btn" id="mc-submit">

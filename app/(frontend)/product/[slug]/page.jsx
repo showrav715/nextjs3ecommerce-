@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
-
+import React, { useState, useEffect, useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import image1 from "../../../../assets/images/product/small-size/1.jpg";
 import image2 from "../../../../assets/images/product/small-size/2.jpg";
 import image3 from "../../../../assets/images/product/small-size/3.jpg";
@@ -16,18 +18,56 @@ const images = [image1, image2, image3, image4, image5, image6];
 
 function ProductDetails() {
 
-  const [selectedValue, setSelectedValue] = useState("1");
+  const [nav1, setNav1] = useState(null);
+  const [nav2, setNav2] = useState(null);
+  const slider1Ref = useRef(null);
+  const slider2Ref = useRef(null);
 
-  const handleChange = (e) => {
-    setSelectedValue(e.target.defaultValue);
+  useEffect(() => {
+    setNav1(slider1Ref.current);
+    setNav2(slider2Ref.current);
+  }, []);
+
+
+  const [selectedOption, setSelectedOption] = useState('1'); // Default selected option
+  const [qty, setQty] = useState(1);
+
+  const handleQtyUp = () => setQty(qty + 1);
+  const handleQtyDown = () => {
+
+    if (qty <= 1) {
+      setQty(1)
+    }
+    else {
+      setQty(qty - 1);
+    }
+  };
+
+  const handleSelectChange = (event) => {
+    setSelectedOption(event.target.value);
   };
 
 
-  const removeEventListener = () => {
-    window.removeEventListener("resize", handleResize);
-  }
+  const [activeTab, setActiveTab] = useState('description');
 
-  const [thumbsSwiper, setThumbsSwiper] = useState(image1);
+  const handleTabClick = (tabId) => {
+    setActiveTab(tabId);
+  };
+
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+    alert(isModalOpen)
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+
+
   return (
     <>
       <div className="breadcrumb-area">
@@ -49,17 +89,30 @@ function ProductDetails() {
             <div className="col-lg-5 col-md-6">
               <div className="product-details-left pt-60">
                 <div className="product-details-thumbs slider-thumbs-1">
-                  {images.map((image, index) => {
-                    <div key={index} className="sm-image"><Image src={image} width={91} height={91} alt="product image thumb" /></div>
-                  })}
+                  <Slider
+                    asNavFor={nav2}
+                    ref={slider1Ref}
+                    arrows={false}
+                  >
+                    {images.map((image, index) => (
+                      <Image src={image} key={index} width={300} height={300} alt="product image thumb" />
+                    ))}
+                  </Slider>
                 </div>
                 <div className="product-details-images slider-navigation-1">
+                  <Slider
+                    asNavFor={nav1}
+                    ref={slider2Ref}
+                    slidesToShow={4}
+                    swipeToSlide={true}
+                    focusOnSelect={true}
+                    arrows={false}
 
-                  <div className="lg-image">
-                    <a className="popup-img venobox vbox-item" href="images/product/large-size/1.jpg" data-gall="myGallery">
-                      <img src="images/product/large-size/1.jpg" alt="product image" />
-                    </a>
-                  </div>
+                  >
+                    {images.map((image, index) => (
+                      <Image key={index} src={image} width={91} height={91} alt="product image thumb" />
+                    ))}
+                  </Slider>
 
                 </div>
               </div>
@@ -112,7 +165,7 @@ function ProductDetails() {
                   <div className="product-variants">
                     <div className="produt-variants-size">
                       <label>Dimension</label>
-                      <select className="nice-select" onChange={()=>handleChange} defaultValue={selectedValue}>
+                      <select className="nice-select" value={selectedOption} onChange={handleSelectChange}>
                         <option value="1" title="S">
                           40x60cm
                         </option>
@@ -132,14 +185,15 @@ function ProductDetails() {
                         <div className="cart-plus-minus">
                           <input
                             className="cart-plus-minus-box"
-                            value="1"
+                            defaultValue={qty}
                             type="text"
+
                           />
-                          <div className="dec qtybutton">
+                          <div className="inc qtybutton" onClick={handleQtyDown}>
                             <i className="fa fa-angle-down"></i>
                           </div>
-                          <div className="inc qtybutton">
-                            <i className="fa fa-angle-up"></i>
+                          <div className="dec qtybutton">
+                            <i className="fa fa-angle-up" onClick={handleQtyUp}></i>
                           </div>
                         </div>
                       </div>
@@ -215,6 +269,144 @@ function ProductDetails() {
                       </li>
                     </ul>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="product-area pt-35">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="li-product-tab">
+                <ul className="nav li-product-menu">
+                  <li>
+                    <a
+                      className={activeTab === 'description' ? 'active' : ''}
+                      onClick={() => handleTabClick('description')}
+                    >
+                      <span>Description</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className={activeTab === 'product-details' ? 'active' : ''}
+                      onClick={() => handleTabClick('product-details')}
+                    >
+                      <span>Product Details</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className={activeTab === 'reviews' ? 'active' : ''}
+                      onClick={() => handleTabClick('reviews')}
+                    >
+                      <span>Reviews</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="tab-content">
+            <div id="description" className={`tab-pane ${activeTab === 'description' ? 'active show' : ''}`} role="tabpanel">
+              <div className="product-description">
+                <span>The best is yet to come! Give your walls a voice with a framed poster...</span>
+              </div>
+            </div>
+            <div id="product-details" className={`tab-pane ${activeTab === 'product-details' ? 'active show' : ''}`} role="tabpanel">
+              <div className="product-details-manufacturer">
+                <a href="#">
+                  <img src="images/product-details/1.jpg" alt="Product Manufacturer Image" />
+                </a>
+                <p><span>Reference</span> demo_7</p>
+                <p><span>Reference</span> demo_7</p>
+              </div>
+            </div>
+            <div id="reviews" className={`tab-pane ${activeTab === 'reviews' ? 'active show' : ''}`} role="tabpanel">
+              <div class="product-reviews">
+                <div class="product-details-comment-block">
+                  <div class="comment-review">
+                    <span>Grade</span>
+                    <ul class="rating">
+                      <li><i class="fa fa-star-o"></i></li>
+                      <li><i class="fa fa-star-o"></i></li>
+                      <li><i class="fa fa-star-o"></i></li>
+                      <li class="no-star"><i class="fa fa-star-o"></i></li>
+                      <li class="no-star"><i class="fa fa-star-o"></i></li>
+                    </ul>
+                  </div>
+                  <div class="comment-author-infos pt-25">
+                    <span>HTML 5</span>
+                    <em>01-12-18</em>
+                  </div>
+                  <div class="comment-details">
+                    <h4 class="title-block">Demo</h4>
+                    <p>Plaza</p>
+                  </div>
+
+
+                  <div className="card">
+
+
+                    <div class="card-body">
+                      <h3 class="review-page-title">Write Your Review</h3>
+                      <div class="modal-inner-area row">
+
+                        <div class="col-lg-12">
+                          <div class="li-review-content">
+
+                            <div class="feedback-area">
+                              <div class="feedback">
+                                <h3 class="feedback-title">Our Feedback</h3>
+                                <form action="#">
+                                  <p class="your-opinion">
+                                    <label>Your Rating</label>
+                                    <span>
+                                      <select class="star-rating">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                      </select>
+                                    </span>
+                                  </p>
+                                  <p class="feedback-form">
+                                    <label for="feedback">Your Review</label>
+                                    <textarea id="feedback" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+                                  </p>
+                                  <div class="feedback-input">
+                                    <p class="feedback-form-author">
+                                      <label for="author">Name<span class="required">*</span>
+                                      </label>
+                                      <input id="author" name="author" value="" size="30" aria-required="true" type="text" />
+                                    </p>
+                                    <p class="feedback-form-author feedback-form-email">
+                                      <label for="email">Email<span class="required">*</span>
+                                      </label>
+                                      <input id="email" name="email" value="" size="30" aria-required="true" type="text" />
+                                      <span class="required"><sub>*</sub> Required fields</span>
+                                    </p>
+                                    <div class="feedback-btn pb-15">
+
+                                      <a href="#">Submit</a>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
                 </div>
               </div>
             </div>

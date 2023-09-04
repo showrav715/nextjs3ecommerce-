@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DropdownMenu from './DropdownMenu';
 import Image from 'next/image';
 import logo from '../../assets/images/menu/logo/1.jpg';
@@ -19,6 +19,13 @@ const languageMenuItems = [
 ];
 
 function Header() {
+
+    const [selectedOption, setSelectedOption] = useState('1'); // Default selected option
+
+    const handleSelectChange = (event) => {
+        setSelectedOption(event.target.value);
+    };
+
 
     const images = {
         logo: logo
@@ -69,12 +76,11 @@ function Header() {
                         <div className="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
 
                             <form action="#" className="hm-searchbox">
-                                <select className="nice-select select-search-category">
+                                <select className="nice-select select-search-category" onChange={handleSelectChange} value={selectedOption}>
                                     <option value="0">All</option>
                                     <option value="10">Laptops</option>
-
                                 </select>
-                                <input type="text" placeholder="Enter your search key ..." />
+                                <input type="text" placeholder="Enter your search key ..." defaultValue="" />
                                 <button className="li-btn" type="submit"><i className="fa fa-search"></i></button>
                             </form>
 
