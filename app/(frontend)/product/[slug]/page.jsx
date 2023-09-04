@@ -112,17 +112,17 @@ function ProductDetails() {
                   <div className="product-variants">
                     <div className="produt-variants-size">
                       <label>Dimension</label>
-                      <select className="nice-select" defaultValue={selectedValue} onChange={handleChange}>
-        <option defaultValue="1" title="S">
-          40x60cm
-        </option>
-        <option defaultValue="2" title="M">
-          60x90cm
-        </option>
-        <option defaultValue="3" title="L">
-          80x120cm
-        </option>
-      </select>
+                      <select className="nice-select" onChange={()=>handleChange} defaultValue={selectedValue}>
+                        <option value="1" title="S">
+                          40x60cm
+                        </option>
+                        <option value="2" title="M">
+                          60x90cm
+                        </option>
+                        <option value="3" title="L">
+                          80x120cm
+                        </option>
+                      </select>
                     </div>
                   </div>
                   <div className="single-add-to-cart">
